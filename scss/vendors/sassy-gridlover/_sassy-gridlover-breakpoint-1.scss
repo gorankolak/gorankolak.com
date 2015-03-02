@@ -1,0 +1,104 @@
+// Typographic system with modular scale and vertical rhythm. 
+// https://github.com/hiulit/Sassy-Gridlover
+
+@import "config";
+
+$sgl-base-font-size-bp-1: 20;
+
+$sgl-base-line-height-bp-1: 1.7;
+
+$sgl-scale-factor-bp-1: $PERFECT_FIFTH !default;
+
+// @function exponent() taken from Sassy-math https://github.com/Team-Sass/Sassy-math.
+@function exponent($base, $exponent) {
+	// Thanks to @HugoGiraudel https://github.com/hiulit/Sassy-Gridlover/issues/4
+	@if pow(2, 2) == 4 {
+		@return pow($base, $exponent);
+	}
+	// Resets value.
+	$value: $base;
+	// Positive intergers get multiplied.
+	@if $exponent > 1 {
+		@for $i from 2 through $exponent {
+			$value: $value * $base; } }
+	// Negatives intergers get divided. A number divided by itself is 1.
+	@if $exponent < 1 {
+		@for $i from 0 through -$exponent {
+			$value: $value / $base; } }
+	// Return the last value written.
+	@return $value;
+}
+
+@mixin sassy-gridlover-body-bp-1($font-size: $sgl-base-font-size-bp-1, $rem: false) {
+	font-size: $font-size * 1px;
+	line-height: round(($font-size * $sgl-base-line-height-bp-1)) * 1px;
+	@if($rem == true) {
+		font-size: ($font-size / $SGL_DEFAULT_FONT_SIZE) * 1rem;
+		line-height: round(($font-size * $sgl-base-line-height-bp-1)) / $SGL_DEFAULT_FONT_SIZE * 1rem;
+	}
+}
+
+@mixin sassy-gridlover-heading-bp-1($step, $rem: false) {
+	$font-size: $sgl-base-font-size-bp-1;
+	$scale: $sgl-scale-factor-bp-1;
+	$computed-font-size: round($font-size * exponent($scale, $step));
+	$line-height: round($font-size * $sgl-base-line-height-bp-1);
+	$lines: ceil($computed-font-size / $line-height);
+	font-size: $computed-font-size * 1px;
+	line-height: $line-height * $lines * 1px;
+	margin-bottom: $line-height * 1px;
+	@if($step > 1) {
+		margin-top: $line-height * 2 * 1px;
+	}
+	@else {
+		margin-top: $line-height * 1px;
+	}
+	@if($rem == true) {
+		font-size: $computed-font-size / $SGL_DEFAULT_FONT_SIZE * 1rem;
+		line-height: ($line-height * $lines) / $SGL_DEFAULT_FONT_SIZE * 1rem;
+		margin-bottom: $line-height / $SGL_DEFAULT_FONT_SIZE * 1rem;
+		@if($step > 1) {
+			margin-top: ($line-height * 2) / $SGL_DEFAULT_FONT_SIZE * 1rem;
+		}
+		@else {
+			margin-top: $line-height / $SGL_DEFAULT_FONT_SIZE * 1rem;
+		}
+	}
+}
+
+@mixin sassy-gridlover-margins-bp-1($rem: false) {
+	margin-bottom: round($sgl-base-font-size-bp-1 * $sgl-base-line-height-bp-1) * 1px;
+	margin-top: round($sgl-base-font-size-bp-1 * $sgl-base-line-height-bp-1) * 1px;
+	@if($rem == true) {
+		margin-bottom: round($sgl-base-font-size-bp-1 * $sgl-base-line-height-bp-1) / $SGL_DEFAULT_FONT_SIZE * 1rem;
+		margin-top: round($sgl-base-font-size-bp-1 * $sgl-base-line-height-bp-1) / $SGL_DEFAULT_FONT_SIZE * 1rem;
+	}
+}
+
+@mixin margin-top-bp-1($rem: false, $multiplier: 1) {
+	margin-top: (round($sgl-base-font-size-bp-1 * $sgl-base-line-height-bp-1) * 1px) * $multiplier;
+	@if($rem == true) {
+		margin-top: (round($sgl-base-font-size-bp-1 * $sgl-base-line-height-bp-1) / $SGL_DEFAULT_FONT_SIZE * 1rem) * $multiplier;
+	}
+}
+
+@mixin margin-bottom-bp-1($rem: false, $multiplier: 1) {
+	margin-bottom: (round($sgl-base-font-size-bp-1 * $sgl-base-line-height-bp-1) * 1px) * $multiplier;
+	@if($rem == true) {
+		margin-bottom: (round($sgl-base-font-size-bp-1 * $sgl-base-line-height-bp-1) / $SGL_DEFAULT_FONT_SIZE * 1rem) * $multiplier;
+	}
+}
+
+@mixin padding-top-bp-1($rem: false, $multiplier: 1) {
+	padding-top: (round($sgl-base-font-size-bp-1 * $sgl-base-line-height-bp-1) * 1px) * $multiplier;
+	@if($rem == true) {
+		padding-top: (round($sgl-base-font-size-bp-1 * $sgl-base-line-height-bp-1) / $SGL_DEFAULT_FONT_SIZE * 1rem) * $multiplier;
+	}
+}
+
+@mixin padding-bottom-bp-1($rem: false, $multiplier: 1) {
+	padding-bottom: (round($sgl-base-font-size-bp-1 * $sgl-base-line-height-bp-1) * 1px) * $multiplier;
+	@if($rem == true) {
+		padding-bottom: (round($sgl-base-font-size-bp-1 * $sgl-base-line-height-bp-1) / $SGL_DEFAULT_FONT_SIZE * 1rem) * $multiplier;
+	}
+}

@@ -1,0 +1,32 @@
+#toggle {
+    width: 28px;
+    height: 30px;
+}
+
+#toggle div {
+    width: 100%;
+    height: 5px;
+    background: $text-color1;
+    margin: 4px auto;
+    transition: all 0.3s;
+    backface-visibility: hidden;
+}
+
+#toggle.on .one {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+#toggle.on .two {
+    opacity: 0;
+}
+
+#toggle.on .three {
+    transform: rotate(-45deg) translate(7px, -8px);
+}
+
+.menu-icon {
+    cursor: pointer;
+    @include breakpoint-105 {
+        display: none;
+    }
+}

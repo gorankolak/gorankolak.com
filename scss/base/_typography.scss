@@ -1,0 +1,182 @@
+// Font scale & vertical rhythm
+// Using Sassy-Gridlover
+// https://github.com/hiulit/Sassy-Gridlover
+
+body {
+    @include sassy-gridlover-body($sgl-base-font-size, true);
+}
+
+h1 {
+    @include sassy-gridlover-heading(3, true);
+        @include margin-top(true);
+}
+
+h2 {
+    @include sassy-gridlover-heading(2, true);
+    @include sassy-gridlover-margins(true);
+}
+
+p, ul, ol, pre, table, blockquote {
+    @include sassy-gridlover-margins(true);
+}
+
+@include breakpoint-50 {
+    body {
+        @include sassy-gridlover-body-bp-1($sgl-base-font-size-bp-1, true);
+    }
+    h1 {
+        @include sassy-gridlover-heading-bp-1(3, true);
+    }
+    h2 {
+        @include sassy-gridlover-heading-bp-1(2, true);
+        @include sassy-gridlover-margins-bp-1(true);
+    }
+    p, ul, ol, pre, table, blockquote {
+        @include sassy-gridlover-margins-bp-1(true);
+    }
+}
+
+.photo {
+    @include margin-top(true, 2);
+    @include breakpoint-50 {
+        @include margin-top-bp-1(true, 2);
+    }
+}
+
+.intro {
+    @include margin-bottom(true, 2);
+    @include breakpoint-50 {
+        @include margin-bottom-bp-1(true, 2);
+    }
+    @include breakpoint-80 {
+        @include margin-top-bp-1(true, 3);
+        margin-bottom: 0;
+    }
+    h1 {
+        @include breakpoint-30 {
+            font-size: 72px;
+        }
+        @include breakpoint-50 {
+            @include margin-top-bp-1(true, 1);
+        }
+        @include breakpoint-80 {
+            font-size: 101px;
+            @include padding-top-bp-1(true, 2);
+            @include padding-bottom-bp-1(true, 1);
+        }
+        @include breakpoint-105 {
+            font-size: 135px;
+            @include padding-top-bp-1(true, 4);
+            @include padding-bottom-bp-1(true, 2);
+        }
+        @include breakpoint-120 {
+            font-size: 152px;
+            @include padding-top-bp-1(true, 4);
+            @include padding-bottom-bp-1(true, 2);
+        }
+    }
+    p {
+        @include margin-top(true, 0.5);
+        @include margin-bottom(true, 0.5);
+        @include breakpoint-50 {
+            @include margin-top-bp-1(true, 0.5);
+            @include margin-bottom-bp-1(true, 0.5);
+        }
+        @include breakpoint-80 {
+            @include sassy-gridlover-margins-bp-1(true);
+            font-size: 35px;
+        }
+    }
+}
+
+.header ul {
+    @include margin-top(true, 0.5);
+    @include breakpoint-50{
+        @include margin-top-bp-1(true, 0.5);
+    }
+    @include breakpoint-80{
+       @include margin-top-bp-1(true, 2);
+    }
+}
+
+.menu-icon {
+    padding-top: 0.4em;
+    @include margin-top(true);
+    @include breakpoint-50 {
+        @include margin-top-bp-1(true);
+    }
+    @include breakpoint-80 {
+        @include margin-top-bp-1(true, 2);
+    }
+}
+
+.main-section {
+    @include padding-top(true);
+    @include breakpoint-50 {
+        @include padding-top-bp-1(true);
+    }
+    h1 {
+        @include margin-top(true);
+        @include breakpoint-50 {
+            @include margin-top-bp-1(true);
+        }
+    }
+    ul {
+        @include padding-top(true);
+        @include padding-bottom(true);
+        @include breakpoint-50 {
+            @include padding-top-bp-1(true);
+            @include padding-bottom-bp-1(true);
+        }
+        li {
+            @include padding-bottom(true, 0.25);
+            @include breakpoint-50 {
+                @include padding-bottom-bp-1(true, 0.25);
+            }
+        }
+        li:last-child {
+            padding-bottom: 0;
+        }
+    }
+}
+
+.project-box {
+    @include margin-top(true, 2);
+    @include margin-bottom(true, 3);
+    @include breakpoint-50 {
+        @include margin-top-bp-1(true, 2);
+        @include margin-bottom-bp-1(true, 3);
+    }
+    @include breakpoint-80 {
+        @include margin-top-bp-1(true);
+    }
+}
+
+.project-title {
+    margin-top: 0;
+}
+
+.project-subtitle {
+    font-size: 80%;
+    @include margin-bottom(true, 0.10);
+    @include breakpoint-50 {
+        @include margin-bottom-bp-1(true, 0.10);
+    }
+}
+
+.read-more {
+    @include padding-bottom(true);
+    @include breakpoint-50 {
+        @include padding-bottom-bp-1(true);
+    }
+}
+
+.icon-arrow-down {
+    bottom: 0;
+    @include breakpoint-64 {
+        @include margin-bottom-bp-1(true);
+    }
+    @include breakpoint-80 {
+        @include margin-bottom-bp-1(true, 2);
+    }
+}

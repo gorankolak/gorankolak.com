@@ -1,0 +1,131 @@
+.header {
+    text-align: center;
+    padding: 0;
+    @include breakpoint-80{
+        text-align: right;
+    }
+    li {
+        background: #fff;
+        @include breakpoint-105 {
+            display: block;
+            background: none;
+        }
+        a {
+            text-decoration: none;
+            color: $text-color1;
+        }
+    }
+}
+
+.nav ul {
+    padding-left: 0;
+    display: none;
+    @include breakpoint-105 {
+        background: none;   
+        display: block !important;
+    }
+}
+
+nav li {
+    display: inline;
+    padding: 0.5em;
+    border-radius: 2px;
+    @include breakpoint-105 {
+        padding: 0;
+    }
+}
+
+nav li a:hover, .icons:hover, nav li a:active, .icons:active {
+    color: $red-color;
+}
+
+.sidebar {
+    @include breakpoint-80 {
+        text-align: center;
+    }
+}
+
+.profile-img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+h1, h2, h3,
+.nav {
+    font-family: $heading-font;
+}
+
+.photo {
+    @include breakpoint-40-80 {
+        text-align: center;
+    }
+}
+
+.info {
+    font-family: $heading-font;
+    text-align: center;
+    svg {
+        margin-right: 1em;
+    }
+
+}
+
+.main {
+    @include breakpoint-80 {
+        padding-left: 0;
+    }
+}
+
+.intro {
+    h1 {
+        text-align: center;
+        @include breakpoint-80 {
+            text-align: left;
+        }
+    }
+    p {
+        font-family: $heading-font;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        color: $red-color;
+        padding-right: 1em;
+        @include breakpoint-80 {
+            margin-left: 2em;
+            text-align: left;
+        }
+    }
+    a {
+        color: $text-color1;
+    }
+    p a:hover, p a:active {
+        text-decoration: none;
+    }
+    @include breakpoint-80 {
+        height: 100vh;
+    }
+    // iPad with portrait orientation - vh fallback.
+    @media all and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+        height: 1024px;
+    }
+    // iPad with landscape orientation - vh fallback.
+    @media all and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+        height: 768px;
+    }
+    // iPhone 5 - vh fallback.
+    @media screen and (device-aspect-ratio: 40/71) {
+        height: 500px;
+    }
+}
+
+.main-section {
+    h1 {
+        text-transform: uppercase;
+        color: $red-color;
+    }
+    ul {
+        background: $secondary-color;
+        border-radius: 2px;
+    }
+}

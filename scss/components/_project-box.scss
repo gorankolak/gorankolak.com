@@ -1,0 +1,30 @@
+.project-box {
+    border-radius: 2px;
+    background: $red-color;
+    color: $bg-color1;
+    a {
+        color: $bg-color1;
+        font-weight: bold;
+    }
+}
+
+.project-img {
+    width: 100%;
+    height: auto;
+}
+
+.project-subtitle {
+    color: $grey-two;
+    text-transform: uppercase;
+    font-weight: bold;
+    span {
+        margin-right: 1em;
+    }
+}
+
+.read-more {
+    text-align: right;
+        a:hover, a:active {
+        text-decoration: none;
+    }
+}

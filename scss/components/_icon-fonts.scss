@@ -1,0 +1,24 @@
+// Using SVG icons
+// https://icomoon.io/
+
+[class^="icon-"], [class*=" icon-"] {
+	display: inline-block;
+	color: $text-color1;
+	fill: currentColor;
+	width: 2rem;
+	height: 2rem;
+}
+
+.icon-arrow-down {
+    display: none;
+    @include breakpoint-64 {
+        display: inline-block;
+        position: fixed;
+        right: auto;
+        left: gutter();
+    }
+    @include breakpoint-80 {
+        left: auto;
+        right: gutter();
+    }
+}
