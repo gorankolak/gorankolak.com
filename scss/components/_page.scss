@@ -1,7 +1,7 @@
 .header {
     text-align: center;
     padding: 0;
-    @include breakpoint-80{
+    @include breakpoint-80 {
         text-align: right;
     }
     li {
