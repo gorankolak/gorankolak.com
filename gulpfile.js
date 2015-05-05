@@ -13,6 +13,7 @@ gulp.task('styles', function() {
     return gulp.src(cssSrc)
         .pipe(changed(cssDest))
         .pipe(sass({
+            errLogToConsole: true,
             outputStyle: 'compressed',
             sourceComments: 'map'
         }))
@@ -41,8 +42,14 @@ gulp.task('browser-sync', function() {
     });
 });
 
+gulp.task('bs-reload', function () {
+    browserSync.reload();
+});
+
 gulp.task('watch', function() {
     gulp.watch('./scss/**/*.scss', ['styles']);
+    gulp.watch('./*.html', ['bs-reload']);
+    gulp.watch('./js/*.js', ['bs-reload']);
 });
 
 gulp.task('default', ['styles', 'imagemin', 'browser-sync', 'watch']);
