@@ -70,7 +70,6 @@ p, ul, ol, pre, table, blockquote {
             @include padding-bottom-bp-1(true, 2);
         }
         @include breakpoint(1920) {
-            font-size: 152px;
             @include padding-top-bp-1(true, 4);
             @include padding-bottom-bp-1(true, 2);
         }
