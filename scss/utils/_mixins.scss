@@ -1,42 +1,11 @@
 // Breakpoints
-@mixin breakpoint-30 {
-    @media (min-width: 30em) {
-        @content;
-    }
-}
 
-@mixin breakpoint-40-80 {
-    @media (min-width: 40em) and (max-width: 80em) {
-        @content;
-    }
-}
+//base font
+$bf: 16;
 
-@mixin breakpoint-50 {
-    @media (min-width: 50em) {
-        @content;
-    }
-}
-
-@mixin breakpoint-64 {
-    @media (min-width: 64em) {
-        @content;
-    }
-}
-
-@mixin breakpoint-80 {
-    @media (min-width: 80em) {
-        @content;
-    }
-}
-
-@mixin breakpoint-105 {
-    @media (min-width: 105em) {
-        @content;
-    }
-}
-
-@mixin breakpoint-120 {
-    @media (min-width: 120em) {
+@mixin breakpoint($bp, $min-max: min-width) {
+    $em: $bp/$bf;
+    @media (#{$min-max}: #{$em}em) {
         @content;
     }
 }

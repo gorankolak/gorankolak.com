@@ -1,0 +1,22 @@
+.btn {
+    padding: 0.25em 0.5em;
+    background-color: $bg-color1;
+    color: $red-color;
+    font-family: $heading-font;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.5);
+    border-radius: 2px;
+    transition: 0.5s all ease;
+    &:hover {
+        background-color: darken($bg-color1, 15);
+        color: darken($red-color, 15);
+    }
+    &:active {
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    }
+}
+
+.btn-right {
+    margin-left: 1em;
+}

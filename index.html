@@ -21,9 +21,9 @@
                     </div>
 
                     <ul id="menu">
-                        <li><a href="#home">HOME</a></li>
-                        <li><a href="#skills">SKILLS</a></li>
-                        <li><a href="#projects">PROJECTS</a></li>
+                        <li><a class="btn" href="#home">HOME</a></li>
+                        <li><a class="btn" href="#skills">SKILLS</a></li>
+                        <li><a class="btn" href="#projects">PROJECTS</a></li>
                     </ul>   
                 </nav>
             </header>
@@ -57,9 +57,14 @@
                         <a href="https://www.youtube.com/watch?v=ur5fGSBsfq8" target="_blank">Football</a> fan, player & participator
                     </p>
                     <p>
-                        Self-taught <span class="red">front-end developer</span>
+                        Self-taught <span class="intro-front-dev">front-end developer</span>
                     </p>
-                    <svg class="icon-arrow-down"><use xlink:href="#icon-arrow-down"></use></svg>
+                    <!-- <div class="icon-wrapper">
+                        <svg class="icon-arrow-down"><use xlink:href="#icon-arrow-down2"></use></svg>
+                    </div> -->
+                    <a class="icon-wrapper" href="#skills">
+                        <svg class="icon-arrow-down"><use xlink:href="#icon-arrow-down2"></use></svg>
+                    </a>
                 </div><!-- End .intro-->
 
                 <div class="main-section" id="skills">
@@ -72,11 +77,11 @@
                         <li>jQuery</li>
                         <li>WordPress</li>
                         <li>Sass</li>
+                        <li>Bootstrap</li>
                         <li>Compass</li>
                         <li>Susy Grids</li>
                         <li>Gulp.js</li>
                         <li>Git</li>
-                        <li>Chrome Developer Tools</li>
                         <li>WampServer</li>
                         <li>Sublime Text</li>
                     </ul>
@@ -93,7 +98,7 @@
                         <h2 class="project-title">Doodle Your Toys</h2>             
                         <p>Initially, I've started the website in May 2013. using Squarespace site builder. During the beginning of 2014., as a part of my education plan, I began to work on it's redesign (all from the ground up). At first, I've made a static website which I've then transferred to a WordPress theme. Having learned how to make a basic WordPress theme is one of the main benefits gained from this project. A complete migration process (from Squarespace to WordPress CMS) and website deployment was completed during the June 2014.</p>
                         <p class="read-more">
-                            <a href="http://www.doodleyourtoys.com/" target="_blank">Check Out</a>
+                            <a class="btn" href="http://www.doodleyourtoys.com/" target="_blank">Check Out</a>
                         </p>
                     </div>
                     <div class="project-box">                    
@@ -104,7 +109,8 @@
                         <h2 class="project-title">Quiz App</h2>
                         <p>A small app created for the purpose of learning a JavaScript programming language. The emphasis was on developing a good understanding of the basic priniciples of plain JavaScript without any additional libraries (i.e., jQuery). Also, I've tried to implement a basic principles of object-oriented programming.</p>
                         <p class="read-more">
-                            <a href="https://github.com/gorankolak/javascript-quiz-app" target="_blank">Check Out</a>
+                            <a class="btn" href="https://github.com/gorankolak/javascript-quiz-app" target="_blank">GitHub</a>
+                            <a class="btn btn-right" href="http://gorankolak.github.io/javascript-quiz-app/" target="_blank">Demo</a>
                         </p>
                     </div>
                     <div class="project-box">                    
@@ -115,7 +121,8 @@
                         <h2 class="project-title">Data Collection</h2>
                         <p>A simple web interface which collects user input data and stores it into a temporary container (HTML table). All collected data can be sorted for each column and edited. I have also included a Highcharts for displaying a certain data parts visually.</p>
                         <p class="read-more">
-                            <a href="https://github.com/gorankolak/data-collection" target="_blank">Check Out</a>
+                            <a class="btn" href="https://github.com/gorankolak/data-collection" target="_blank">GitHub</a>
+                            <a class="btn btn-right" href="http://gorankolak.github.io/data-collection/" target="_blank">Demo</a>
                         </p>
                     </div>    
                     <div class="project-box">
@@ -126,7 +133,7 @@
                         <h2 class="project-title">Gorankolak.com</h2>                    
                         <p>My personal website. Built to showcase my interests, skills and projects. Since I tend to constantly learn and improve, most likely it will be changed from time to time.</p>
                         <p class="read-more">
-                            <a href="https://github.com/gorankolak/gorankolak.com" target="_blank">GitHub Repo</a>
+                            <a class="btn" href="https://github.com/gorankolak/gorankolak.com" target="_blank">GitHub</a>
                         </p>
                     </div>
                 </div><!-- End .main-section #projects-->
@@ -142,9 +149,13 @@
         <!-- SVG icons shape definitions-->
         <svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <defs>
-                <symbol id="icon-arrow-down" viewBox="0 0 1024 1024">
+                <!-- <symbol id="icon-arrow-down" viewBox="0 0 1024 1024">
                     <title>arrow-down</title>
                     <path class="path1" d="M512 1024l512-512h-320v-511.998l-384-0.002v512h-320z"></path>
+                </symbol> -->
+                <symbol id="icon-arrow-down2" viewBox="0 0 1024 1024">
+                    <title>arrow-down2</title>
+                    <path class="path1" d="M132.198 286.771c-13.875-13.722-36.301-13.722-50.125 0-13.824 13.67-13.824 35.891 0 49.613l404.89 400.896c13.875 13.722 36.25 13.722 50.125 0l404.89-400.896c13.824-13.722 13.875-35.891 0-49.613s-36.352-13.722-50.125-0.051l-379.853 365.619-379.802-365.568z"></path>
                 </symbol>
                 <symbol id="icon-facebook" viewBox="0 0 1024 1024">
                     <title>facebook</title>

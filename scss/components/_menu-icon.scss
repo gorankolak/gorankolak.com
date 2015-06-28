@@ -26,7 +26,7 @@
 
 .menu-icon {
     cursor: pointer;
-    @include breakpoint-105 {
+    @include breakpoint(1680) {
         display: none;
     }
 }

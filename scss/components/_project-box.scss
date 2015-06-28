@@ -2,10 +2,7 @@
     border-radius: 2px;
     background: $red-color;
     color: $bg-color1;
-    a {
-        color: $bg-color1;
-        font-weight: bold;
-    }
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.5);
 }
 
 .project-img {

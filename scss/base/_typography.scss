@@ -20,7 +20,7 @@ p, ul, ol, pre, table, blockquote {
     @include sassy-gridlover-margins(true);
 }
 
-@include breakpoint-50 {
+@include breakpoint(800) {
     body {
         @include sassy-gridlover-body-bp-1($sgl-base-font-size-bp-1, true);
     }
@@ -38,38 +38,38 @@ p, ul, ol, pre, table, blockquote {
 
 .photo {
     @include margin-top(true, 2);
-    @include breakpoint-50 {
+    @include breakpoint(800) {
         @include margin-top-bp-1(true, 2);
     }
 }
 
 .intro {
     @include margin-bottom(true, 2);
-    @include breakpoint-50 {
+    @include breakpoint(800) {
         @include margin-bottom-bp-1(true, 2);
     }
-    @include breakpoint-80 {
+    @include breakpoint(1280) {
         @include margin-top-bp-1(true, 3);
         margin-bottom: 0;
     }
     h1 {
-        @include breakpoint-30 {
+        @include breakpoint(480) {
             font-size: 72px;
         }
-        @include breakpoint-50 {
+        @include breakpoint(800) {
             @include margin-top-bp-1(true, 1);
         }
-        @include breakpoint-80 {
+        @include breakpoint(1280) {
             font-size: 101px;
             @include padding-top-bp-1(true, 2);
             @include padding-bottom-bp-1(true, 1);
         }
-        @include breakpoint-105 {
+        @include breakpoint(1680) {
             font-size: 135px;
             @include padding-top-bp-1(true, 4);
             @include padding-bottom-bp-1(true, 2);
         }
-        @include breakpoint-120 {
+        @include breakpoint(1920) {
             font-size: 152px;
             @include padding-top-bp-1(true, 4);
             @include padding-bottom-bp-1(true, 2);
@@ -78,11 +78,11 @@ p, ul, ol, pre, table, blockquote {
     p {
         @include margin-top(true, 0.5);
         @include margin-bottom(true, 0.5);
-        @include breakpoint-50 {
+        @include breakpoint(800) {
             @include margin-top-bp-1(true, 0.5);
             @include margin-bottom-bp-1(true, 0.5);
         }
-        @include breakpoint-80 {
+        @include breakpoint(1280) {
             @include sassy-gridlover-margins-bp-1(true);
             font-size: 35px;
         }
@@ -91,46 +91,51 @@ p, ul, ol, pre, table, blockquote {
 
 .header ul {
     @include margin-top(true, 0.5);
-    @include breakpoint-50{
+    @include breakpoint(800) {
         @include margin-top-bp-1(true, 0.5);
     }
-    @include breakpoint-80{
+    @include breakpoint(1280) {
        @include margin-top-bp-1(true, 2);
+    }
+    li {
+       @include breakpoint(1680) {
+           @include margin-bottom-bp-1(true, 0.25);
+        } 
     }
 }
 
 .menu-icon {
     padding-top: 0.4em;
     @include margin-top(true);
-    @include breakpoint-50 {
+    @include breakpoint(800) {
         @include margin-top-bp-1(true);
     }
-    @include breakpoint-80 {
+    @include breakpoint(1280) {
         @include margin-top-bp-1(true, 2);
     }
 }
 
 .main-section {
     @include padding-top(true);
-    @include breakpoint-50 {
+    @include breakpoint(800) {
         @include padding-top-bp-1(true);
     }
     h1 {
         @include margin-top(true);
-        @include breakpoint-50 {
+        @include breakpoint(800) {
             @include margin-top-bp-1(true);
         }
     }
     ul {
         @include padding-top(true);
         @include padding-bottom(true);
-        @include breakpoint-50 {
+        @include breakpoint(800) {
             @include padding-top-bp-1(true);
             @include padding-bottom-bp-1(true);
         }
         li {
             @include padding-bottom(true, 0.25);
-            @include breakpoint-50 {
+            @include breakpoint(800) {
                 @include padding-bottom-bp-1(true, 0.25);
             }
         }
@@ -143,11 +148,11 @@ p, ul, ol, pre, table, blockquote {
 .project-box {
     @include margin-top(true, 2);
     @include margin-bottom(true, 3);
-    @include breakpoint-50 {
+    @include breakpoint(800) {
         @include margin-top-bp-1(true, 2);
         @include margin-bottom-bp-1(true, 3);
     }
-    @include breakpoint-80 {
+    @include breakpoint(1280) {
         @include margin-top-bp-1(true);
     }
 }
@@ -159,24 +164,25 @@ p, ul, ol, pre, table, blockquote {
 .project-subtitle {
     font-size: 80%;
     @include margin-bottom(true, 0.10);
-    @include breakpoint-50 {
+    @include breakpoint(800) {
         @include margin-bottom-bp-1(true, 0.10);
     }
 }
 
 .read-more {
     @include padding-bottom(true);
-    @include breakpoint-50 {
+    @include breakpoint(800) {
         @include padding-bottom-bp-1(true);
     }
 }
 
-.icon-arrow-down {
+
+.icon-wrapper {
     bottom: 0;
-    @include breakpoint-64 {
+    @include breakpoint(1024) {
         @include margin-bottom-bp-1(true);
     }
-    @include breakpoint-80 {
+    @include breakpoint(1280) {
         @include margin-bottom-bp-1(true, 2);
     }
 }

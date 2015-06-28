@@ -6,19 +6,43 @@
 	color: $text-color1;
 	fill: currentColor;
 	width: 2rem;
-	height: 2rem;
+    height: 2rem;
+    &:hover {
+        color: $red-color;
+    }
+    @include breakpoint(1280) {
+        display: inline-block;
+        width: 2.3rem;
+        height: 2.3rem;
+    }
+}
+
+.icon-wrapper {
+    background-color: $red-color;
+    text-align: center;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    display: none;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.5);
+    transition: background-color 0.5s ease;
+    @include breakpoint(1280) {
+        display: inline-block;
+    }
+    &:hover {
+        background-color: darken($bg-color1, 15);
+        .icon-arrow-down {
+            color: darken($red-color, 15);
+        }
+    }
+    &:active {
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    }
 }
 
 .icon-arrow-down {
-    display: none;
-    @include breakpoint-64 {
-        display: inline-block;
-        position: fixed;
-        right: auto;
-        left: gutter();
-    }
-    @include breakpoint-80 {
-        left: auto;
-        right: gutter();
-    }
+    color: $bg-color1;
+    margin: 0.9em auto auto;
+    width: 1.6rem;
+    height: 1.6rem;
 }

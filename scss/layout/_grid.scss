@@ -4,11 +4,11 @@
 
 .page {
     @include container;
-    @include breakpoint-50 {
+    @include breakpoint(800) {
         margin-left: 1.5em;
         margin-right: 1.5em;
     }
-    @include breakpoint-80 {
+    @include breakpoint(1280) {
         margin-left: 0;
         margin-right: 0;
     }
@@ -17,17 +17,22 @@
 .header {
     @include span(4 of 4);
     position: fixed;
-    @include breakpoint-80 {
+    @include breakpoint(1280) {
         @include span(1.65 of 5);
         right: gutter();
     }
-    @include breakpoint-105 {
+    @include breakpoint(1680) {
         @include span(1 of 5);
         right: 0;
     }
     li {
-        margin-right: 1em;
-        @include breakpoint-80 {
+        margin-right: 0.5em;
+        margin-left: 0.5em;
+        @include breakpoint(480) {
+            margin-right: 1em;
+            margin-left: 1em;
+        }
+        @include breakpoint(1280) {
             margin-right: 0;
             margin-left: 1em;
         }
@@ -41,7 +46,7 @@
 
 .sidebar {
     @include span(4 of 4);
-    @include breakpoint-80 {
+    @include breakpoint(1280) {
         @include span(2 of 5);
         position: fixed;
         left: 0;
@@ -50,13 +55,16 @@
 }
 
 .photo {
-    max-width: span(3 of 4);
+    max-width: span(2 of 4);
     margin-right: auto;
     margin-left: auto;
-    @include breakpoint-40-80 {
+    @media (min-width: 40em) and (max-width: 80em) {
         img {
             max-width: 418px;
         }
+    }
+    @include breakpoint(1280) {
+        max-width: span(3 of 4);
     }
 }
 
@@ -66,19 +74,19 @@
 
 .main {
     @include span(4 of 4);
-    @include breakpoint-80 {
+    @include breakpoint(1280) {
         @include span(3 of 5);
         margin-left: span(2 of 5);
         @include suffix(0.25 of 5);
     }
-    @include breakpoint-105 {
+    @include breakpoint(1680) {
         @include span(2.5 of 5);
     }
 }
 
 .main-section {
     h1, h2, p, ul {
-        @include breakpoint-50 {
+        @include breakpoint(800) {
             max-width: 723px;
             float: none;
             margin-left: auto;
@@ -91,17 +99,25 @@
     p, h2 {
         padding-left: gutter();
         padding-right: gutter();
-        @include breakpoint-64 {
+        @include breakpoint(1024) {
             padding-left: 0;
             padding-right: 0;
         }
-        @include breakpoint-80 {
+        @include breakpoint(1280) {
             padding-left: gutter();
             padding-right: gutter();
         }
-        @include breakpoint-120 {
+        @include breakpoint(1920) {
             padding-left: 0;
             padding-right: 0;
         }
+    }
+}
+
+.icon-wrapper {
+    @include breakpoint(1024) {
+        position: fixed;
+        left: auto;
+        right: gutter();
     }
 }

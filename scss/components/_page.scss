@@ -1,18 +1,19 @@
 .header {
     text-align: center;
     padding: 0;
-    @include breakpoint-80 {
+    @include breakpoint(1280) {
         text-align: right;
     }
     li {
         background: #fff;
-        @include breakpoint-105 {
+        @include breakpoint(1680) {
             display: block;
             background: none;
         }
         a {
             text-decoration: none;
             color: $text-color1;
+            transition: 0.5s all ease;
         }
     }
 }
@@ -20,7 +21,7 @@
 .nav ul {
     padding-left: 0;
     display: none;
-    @include breakpoint-105 {
+    @include breakpoint(1680) {
         background: none;   
         display: block !important;
     }
@@ -28,19 +29,14 @@
 
 nav li {
     display: inline;
-    padding: 0.5em;
-    border-radius: 2px;
-    @include breakpoint-105 {
+    @include breakpoint(1680) {
         padding: 0;
     }
 }
 
-nav li a:hover, .icons:hover, nav li a:active, .icons:active {
-    color: $red-color;
-}
-
 .sidebar {
-    @include breakpoint-80 {
+    height: 100%;
+    @include breakpoint(1280) {
         text-align: center;
     }
 }
@@ -49,6 +45,7 @@ nav li a:hover, .icons:hover, nav li a:active, .icons:active {
     width: 100%;
     height: auto;
     border-radius: 50%;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.5);
 }
 
 h1, h2, h3,
@@ -57,7 +54,7 @@ h1, h2, h3,
 }
 
 .photo {
-    @include breakpoint-40-80 {
+    @media (min-width: 40em) and (max-width: 80em) {
         text-align: center;
     }
 }
@@ -68,11 +65,10 @@ h1, h2, h3,
     svg {
         margin-right: 1em;
     }
-
 }
 
 .main {
-    @include breakpoint-80 {
+    @include breakpoint(1280) {
         padding-left: 0;
     }
 }
@@ -80,29 +76,39 @@ h1, h2, h3,
 .intro {
     h1 {
         text-align: center;
-        @include breakpoint-80 {
+        @include breakpoint(1280) {
             text-align: left;
         }
     }
     p {
         font-family: $heading-font;
-        font-weight: bold;
         text-align: center;
         text-transform: uppercase;
         color: $red-color;
+        color: $text-color1;        
         padding-right: 1em;
-        @include breakpoint-80 {
+        @include breakpoint(1280) {
             margin-left: 2em;
             text-align: left;
         }
     }
-    a {
+    p a {
         color: $text-color1;
+        color: $red-color;
+        font-weight: bold;
+        text-decoration: none;
+        transition: 0.5s all ease;
+        &:hover {
+            background-color: darken($bg-color1, 15);
+            color: darken($red-color, 15);
+            border-radius: 2px;
+            box-shadow: 0 3px 5px 0 rgba(0,0,0,0.5);
+        }
     }
     p a:hover, p a:active {
         text-decoration: none;
     }
-    @include breakpoint-80 {
+    @include breakpoint(1280) {
         height: 100vh;
     }
     // iPad with portrait orientation - vh fallback.
@@ -119,6 +125,11 @@ h1, h2, h3,
     }
 }
 
+.intro-front-dev {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
 .main-section {
     h1 {
         text-transform: uppercase;
@@ -127,5 +138,10 @@ h1, h2, h3,
     ul {
         background: $secondary-color;
         border-radius: 2px;
+        box-shadow: 0 3px 5px 0 rgba(0,0,0,0.5);
     }
+}
+
+.footer {
+    font-family: $heading-font;
 }

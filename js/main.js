@@ -9,7 +9,7 @@ $(function() {
 
     // Hide arrow
     var windowHeight = window.innerHeight;
-    var iconArrow = $('.icon-arrow-down');
+    var iconArrow = $('.icon-wrapper');
 
     $(window).scroll(function() {
         var iconDistance = iconArrow.offset().top;
